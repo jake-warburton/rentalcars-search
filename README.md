@@ -32,3 +32,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Choices
+
+I've chosen to use Next.js as I am very comfortable with it, it provides server-side rendering (not useful for this test, but if I was to expand it into a full website it would be), and it comes with Webpack and CSS-in-JS which will solve the problem of what to use to bundle the app and what styling method to use. I prefer Next.js' folder and page structure over the less opinionated "Create-React-App", as it is more reminiscent of typical website folder structure which I'm used to. I like to use CSS-in-JS for small apps because you can keep it lightweight by not including large styling libraries like [bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/) or [Chakra.ui](https://chakra-ui.com/) which I would usually use on large projects.
+
+Jest
+Typescript
