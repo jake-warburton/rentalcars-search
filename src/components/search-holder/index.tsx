@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import SearchBar from "../search-bar";
-import SearchResults from "../search-results";
+import SearchBar from "./search-bar";
+import SearchResults from "./search-results";
 
 const SearchHolder = () => {
   //  Input to search with. Default to blank string.
@@ -24,17 +24,20 @@ const SearchHolder = () => {
   };
 
   useEffect(() => {
-    //  Debounce any ongoing calls to the API
+    //  Debounce any ongoing calls to the API ######## TODO
 
-    //  Perform a new call to the API using the new search criteria if searchString is longer than 1 character
     if (typeof searchString == "string" && searchString.length > 1) {
+      //  Perform a new call to the API using the new search criteria if searchString is longer than 1 character
       FetchSearchResults(searchString, SetResults);
       SetDisplayResults(true);
     } else if (typeof searchString == "string" && searchString.length == 0) {
+      //  If searchString is blank, hide the Results box
       SetDisplayResults(false);
     } else {
+      //  Else, remove the results (showing "No results found")
       SetResults([]);
     }
+    //  Whenever the searchString variable is changed or app first mounts, call this function
   }, [searchString]);
 
   return (
