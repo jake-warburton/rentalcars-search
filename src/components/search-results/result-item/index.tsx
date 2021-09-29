@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import ResultBadge from "./result-badge";
-
 interface item {
   bookingId: string;
   name: string;
@@ -45,7 +44,9 @@ const ResultItem = (props: Props) => {
         )}
 
         <div className="result-description__holder">
-          <span className="result-description">{props.item.name}</span>
+          <span className="result-description" aria-label={props.item.name}>
+            {props.item.name}
+          </span>
 
           {additionals.length > 0 ? (
             <span className="result-additionals">{additionals.join(", ")}</span>

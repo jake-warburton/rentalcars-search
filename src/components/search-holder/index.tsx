@@ -7,10 +7,8 @@ const SearchHolder = () => {
   //  Input to search with. Default to blank string.
   const [searchString, SetSearchString] = useState("");
 
-  const [displayResults, SetDisplayResults] = useState(true);
-
-  //  Messages to the user in case of errors. Default to blank string.
-  const [feedback, SetFeedback] = useState("");
+  //  Boolean decides whether to display the result window or not. Default false.
+  const [displayResults, SetDisplayResults] = useState(false);
 
   //  Results from the API
   const [results, SetResults] = useState([]);

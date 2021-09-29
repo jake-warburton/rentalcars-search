@@ -11,7 +11,9 @@ const ResultBadge = (props: Props) => {
 
   return (
     <>
-      <div className="result-badge">{badge.name}</div>
+      <div className="result-badge" aria-label={badge.name}>
+        {badge.name}
+      </div>
 
       <style jsx>
         {`
