@@ -22,7 +22,7 @@ describe("Interacting with search input box", () => {
 
   it("Displays no results when entering just 1 alphanumerical character in the search input", () => {
     cy.get("#search-bar").clear().type("M"); //   Enter "M" into the search input
-    cy.get(".search-results").contains("No results found"); // Search results div appears. The dropdown contains "No results found"
+    cy.get(".search-results").should("not.exist"); // Search results div appears. The dropdown contains "No results found"
   });
 
   it("Displays several results when entering criteria in the search input", () => {
@@ -46,6 +46,6 @@ describe("Interacting with search input box", () => {
     cy.get(".search-results").contains("Manchester"); // Search results div appears. The dropdown contains "Manchester"
     cy.get(".search-results").contains("Airport"); // Search results div appears. The dropdown contains "Airport"
     cy.get("#search-bar").type("{backspace}"); //  Enter special key "Backspace" to truncate the search input back to 1 character in length
-    cy.get(".search-results").contains("No results found"); // Search results div appears. The dropdown contains "No results found"
+    cy.get(".search-results").should("not.exist"); // Search results div appears. The dropdown contains "No results found"
   });
 });

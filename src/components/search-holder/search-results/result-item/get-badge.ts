@@ -23,6 +23,10 @@ export function GetBadge(bookingId: string) {
       name = "Airport";
       bgColour = "#ae1d46";
       break;
+    case "region":
+      name = "Region";
+      bgColour = "#26266f";
+      break;
     case "district":
       name = "District";
       bgColour = "#26266f";

@@ -30,12 +30,10 @@ const SearchHolder = () => {
       //  Perform a new call to the API using the new search criteria if searchString is longer than 1 character
       FetchSearchResults(searchString, SetResults);
       SetDisplayResults(true);
-    } else if (typeof searchString == "string" && searchString.length == 0) {
-      //  If searchString is blank, hide the Results box
-      SetDisplayResults(false);
     } else {
-      //  Else, remove the results (showing "No results found")
+      //  If searchString is blank or 1 char long, hide the Results box
       SetResults([]);
+      SetDisplayResults(false);
     }
     //  Whenever the searchString variable is changed or app first mounts, call this function
   }, [searchString]);
