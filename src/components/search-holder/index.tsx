@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import SearchBar from "./search-bar";
 import SearchResults from "./search-results";
 
 const SearchHolder = () => {
-  //  Input to search with. Default to blank string.
-  const [searchString, SetSearchString] = useState("");
-
   //  Boolean decides whether to display the result window or not. Default false.
   const [displayResults, SetDisplayResults] = useState(false);
 
@@ -23,9 +20,7 @@ const SearchHolder = () => {
     SetResults(json?.results?.docs);
   };
 
-  useEffect(() => {
-    //  Debounce any ongoing calls to the API ######## TODO
-
+  const HandleInputChange = (searchString: string) => {
     if (typeof searchString == "string" && searchString.length > 1) {
       //  Perform a new call to the API using the new search criteria if searchString is longer than 1 character
       FetchSearchResults(searchString, SetResults);
@@ -35,16 +30,14 @@ const SearchHolder = () => {
       SetResults([]);
       SetDisplayResults(false);
     }
-    //  Whenever the searchString variable is changed or app first mounts, call this function
-  }, [searchString]);
+  };
 
   return (
     <>
       <div className="search-holder">
         <h3 className="search-heading">{`Let's find your ideal car`}</h3>
         <SearchBar
-          searchString={searchString}
-          SetSearchString={SetSearchString}
+          SetSearchString={HandleInputChange}
           SetDisplayResults={SetDisplayResults}
         />
         <SearchResults

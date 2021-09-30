@@ -12,6 +12,12 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+To see the testing suite and activate it,
+
+```bash
+npm run e2e
+```
+
 ## Choices
 
 React.js as that's the recommended frontend Library to use, and the one I'm the most comfortable with personally.
@@ -22,4 +28,6 @@ I like to use CSS-in-JS for small apps because it keeps the style classes only r
 
 I've opted to use Cypress testing library as it's simple to use, readable and provides the functionality to test the frontend components HTML output required for this project. Some libraries are more suited to testing functions but this project is mainly the HTML output you see on screen.
 
-I'm using Typescript as it allows you to catch errors before they even happen by forcing good practices and typing of variable and prop declarations ensure your modular components all work seamlessly together
+I'm using Typescript as it allows you to catch errors before they even happen by forcing good coding practices and typing of variable and prop declarations ensure your modular components all work seamlessly together. (No unexpected types)
+
+Finally I'm using debounce to prevent a new API request from going out every time a keystroke is made.

@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
+const debounce = require("lodash.debounce");
 
 type Props = {
-  searchString: string;
   SetSearchString: any;
   SetDisplayResults: any;
 };
 
 const SearchBar = (props: Props) => {
+  const [inputContent, UpdateInputContent] = useState("");
+
+  const debouncedHandler = useCallback(
+    //  After 200ms, trigger SetSearchString (which will then query the API for new results)
+    debounce(
+      (newSearchString: string) => props.SetSearchString(newSearchString),
+      200
+    ),
+    []
+  );
+
+  const HandleChange = (e: any) => {
+    UpdateInputContent(e.target.value);
+    debouncedHandler(e.target.value);
+  };
+
   return (
     <>
       <input
@@ -14,10 +30,8 @@ const SearchBar = (props: Props) => {
         className="search-bar"
         placeholder="Pick-up Location"
         aria-label="Pick-up Location"
-        value={props.searchString}
-        onChange={(e) => {
-          props.SetSearchString(e.target.value);
-        }}
+        value={inputContent}
+        onChange={HandleChange}
         onFocus={() => {
           props.SetDisplayResults(true);
         }}
