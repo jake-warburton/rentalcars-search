@@ -9,8 +9,6 @@ type Props = {
 const ResultBadge = (props: Props) => {
   const badge = GetBadge(props.bookingId);
 
-  console.log("JAKE props: ", props);
-
   return (
     <>
       <div className="result-badge" aria-label={badge.name}>

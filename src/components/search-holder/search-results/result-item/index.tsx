@@ -29,8 +29,6 @@ const ResultItem = (props: Props) => {
     additionals.push(props.item.country);
   }
 
-  console.log("JAKE props.item: ", props.item);
-
   return (
     <>
       <li

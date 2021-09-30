@@ -11,8 +11,6 @@ export function GetBadge(bookingId: string) {
   //  The return name value
   let name = "";
 
-  console.log("JAKE bookingId: ", bookingId);
-
   switch (idName) {
     case "city":
       name = "City";
@@ -31,8 +29,8 @@ export function GetBadge(bookingId: string) {
       break;
     case "region":
       name = "Region";
-      bgColour = "#26266f";
-      color = "#fff";
+      bgColour = "#f1c74c";
+      color = "#222";
       break;
     case "district":
       name = "District";
