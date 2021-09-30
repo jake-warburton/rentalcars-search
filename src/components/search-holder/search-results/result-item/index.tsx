@@ -37,7 +37,14 @@ const ResultItem = (props: Props) => {
           props.SetDisplayResults(false);
         }}
       >
-        <ResultBadge bookingId={props.item.bookingId} />
+        {props.item.bookingId ||
+        props.item.city ||
+        props.item.region ||
+        props.item.country ? (
+          <ResultBadge bookingId={props.item.bookingId} />
+        ) : (
+          ``
+        )}
 
         <div className="result-description__holder">
           <span className="result-description" aria-label={props.item.name}>

@@ -58,8 +58,8 @@ const SearchHolder = (props: Props) => {
           }
           .search-results__empty {
             padding: 16px 10px;
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 500;
+            font-size: 0.95rem;
             color: #030303;
           }
         `}
