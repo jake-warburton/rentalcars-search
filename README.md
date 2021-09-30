@@ -18,6 +18,13 @@ To see the testing suite and activate it,
 npm run e2e
 ```
 
+Finally, to build and serve the application:
+
+```bash
+npm run build
+npm start
+```
+
 ## Choices
 
 React.js as that's the recommended frontend Library to use, and the one I'm the most comfortable with personally.

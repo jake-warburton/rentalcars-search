@@ -25,24 +25,45 @@ const SearchBar = (props: Props) => {
 
   return (
     <>
-      <input
-        id="search-bar"
-        className="search-bar"
-        placeholder="Pick-up Location"
-        aria-label="Pick-up Location"
-        value={inputContent}
-        onChange={HandleChange}
-        onFocus={() => {
-          props.SetDisplayResults(true);
-        }}
-      />
+      <div className="search-bar__holder">
+        <div className="icon__holder">
+          <img className="icon" src="/car.png" />
+        </div>
+        <input
+          id="search-bar"
+          className="search-bar"
+          placeholder="Pick-up Location"
+          aria-label="Pick-up Location"
+          value={inputContent}
+          onChange={HandleChange}
+          onFocus={() => {
+            props.SetDisplayResults(true);
+          }}
+        />
+      </div>
       <style jsx>
         {`
+          .search-bar__holder {
+            display: flex;
+            align-items: center;
+          }
+          .icon__holder {
+            width: 0px;
+            overflow: visible;
+          }
+          .icon {
+            width: 30px;
+            height: auto;
+            left: 10px;
+            position: relative;
+            pointer-events: none;
+          }
           .search-bar {
             color: black;
             width: 100%;
             border-radius: 4px;
-            padding: 6px 20px;
+            padding: 15px;
+            padding-left: 44px;
             font-weight: 600;
             font-size: 0.9rem;
           }

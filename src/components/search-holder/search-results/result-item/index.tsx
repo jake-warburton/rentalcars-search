@@ -29,6 +29,8 @@ const ResultItem = (props: Props) => {
     additionals.push(props.item.country);
   }
 
+  console.log("JAKE props.item: ", props.item);
+
   return (
     <>
       <li
@@ -37,11 +39,7 @@ const ResultItem = (props: Props) => {
           props.SetDisplayResults(false);
         }}
       >
-        {props.item?.bookingId ? (
-          <ResultBadge bookingId={props.item.bookingId} />
-        ) : (
-          ``
-        )}
+        <ResultBadge bookingId={props.item.bookingId} />
 
         <div className="result-description__holder">
           <span className="result-description" aria-label={props.item.name}>
@@ -71,8 +69,8 @@ const ResultItem = (props: Props) => {
             flex-direction: column;
           }
           .result-description {
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 500;
+            font-size: 0.95rem;
           }
           .result-additionals {
             font-size: 0.8rem;

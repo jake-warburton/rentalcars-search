@@ -6,38 +6,48 @@ export function GetBadge(bookingId: string) {
   }
   //  Return background colour for the badge
   let bgColour = "#7d8c31";
+  let color = "#fff";
 
   //  The return name value
   let name = "";
 
+  console.log("JAKE bookingId: ", bookingId);
+
   switch (idName) {
     case "city":
       name = "City";
-      bgColour = "#6dae1d";
+      bgColour = "#1879ca";
+      color = "#fff";
       break;
     case "train":
       name = "Station";
-      bgColour = "#1d78ae";
+      bgColour = "#1879ca";
+      color = "#fff";
       break;
     case "airport":
       name = "Airport";
-      bgColour = "#ae1d46";
+      bgColour = "#ff8000";
+      color = "#262626";
       break;
     case "region":
       name = "Region";
       bgColour = "#26266f";
+      color = "#fff";
       break;
     case "district":
       name = "District";
-      bgColour = "#26266f";
+      bgColour = "#008009";
+      color = "#fff";
       break;
     default:
       name = "Item"; //  I am providing the fallback of name "Item" and this background colour for any unexpected results which require a badge but not defined here
-      bgColour = "#7d8c31";
+      bgColour = "#1879ca";
+      color = "#fff";
   }
 
   return {
     name,
     bgColour,
+    color,
   };
 }
